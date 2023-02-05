@@ -1,0 +1,59 @@
+<div class="sidenav">
+
+    <div class="header">
+
+        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6MfVRZkz1u4VFOrahEVBqf?utm_source=generator" 
+        width="100%" height="120" frameBorder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+        <img  class="profile-img" src="/assets/images/playlist.jpg"><img> -->
+
+        <div class="simple-container">
+        <div class="android-like-container">
+        
+            
+        <h3>Marcos Alberto Moroyoqui Olan
+            <br>
+            030934
+            <br>
+            marcos.moroyoqui@cetys.edu.mx
+        </h3>
+       
+        </div>
+  
+        </div>
+        
+    </div>
+
+    <div class="content">
+        
+        <div class="sidebar-links">
+            
+
+
+            <div class="collapsible-accordion" *ngFor="let link of links">
+
+                <div *ngIf="link.type=='single'">
+                    <a [routerLink]="link.link">  {{link.title}}</a>
+                </div>
+
+                <div class="collapsible-item" *ngIf="link.type=='multiple'">
+                    <input type="checkbox" id="tab{{link.title}}">
+                    <label class="collapsible-item-label" for="tab{{link.title}}">{{link.title}} </label>
+                    <div class="collapsible-item-content" >
+                    <div *ngFor="let child of link.childs">
+                        <a [routerLink]="[link.link + child['resource-id']]"> {{child.title}}</a>
+                    </div>
+                    </div>
+                  </div>
+
+            </div>
+    
+            
+
+           
+        </div>
+    </div>
+
+</div>

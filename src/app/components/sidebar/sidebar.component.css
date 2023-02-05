@@ -1,0 +1,107 @@
+.sidenav{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+ .header{
+    display: table-row;
+    width: 100%;
+    height: 35%;
+    background-color: yellow;
+    padding: auto;
+    align-items: center;
+    align-content: center;
+    vertical-align: top;
+ }
+ .content{
+    display: table-row;
+    width: 100%;
+    background-color: green;
+ }
+
+ .profile-img{
+    width: 20%;
+    height: 20%;
+ }
+
+ .simple-container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+ }
+
+ .android-like-container{
+  display: flex;
+  align-items: flex-end;
+   background-color: red;
+   height: 80%;
+   width: 80%;
+   border-radius: 10%;
+   background-image: url('/assets/images/marcos.jpg');
+   background-size: 100%,100%;
+   text-align:right;
+   
+ }
+ 
+
+ .android-like-container > h3{
+   text-align: end;
+   background-color: #fff;
+ }
+
+
+ .sidebar-links{
+   display: flex;
+   flex-direction: column;
+
+   height: 100%;
+   width: 100%;
+ }
+
+
+
+
+input {
+   position: absolute;
+   opacity: 0;
+   z-index: -1;
+ }
+
+ .collapsible-accordion {
+   margin: 10px;
+   border-radius: 5px;
+   overflow: hidden;
+   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+.collapsible-item-label {
+   display: flex;
+   justify-content: space-between;
+   padding: 1em;
+   font-weight: bold;
+   cursor: pointer;
+   background: purple;
+   color: #fff;
+}
+.collapsible-item-label::after {
+   width: 1em;
+   height: 1em;
+   text-align: center;
+   transition: all 0.35s;
+}
+.collapsible-item-content {
+   max-height: 0;
+   /* padding: 0 1em; */
+   background: white;
+   transition: all 0.35s;
+
+}
+input:checked + .collapsible-item-label::after {
+   transform: rotate(90deg);
+}
+input:checked ~ .collapsible-item-content {
+   max-height: 100vh;
+   padding: 1em;
+}
