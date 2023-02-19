@@ -299,10 +299,7 @@ export let assign3 ={
                         "type":"text",
                         "value":"Donde también podremos ver que en caso de haber configurado el certificado  y la redireccion https , cloudfront hara redirect inmediato a https, mostrando la conxion segura con el candado "
                     },
-                    {
-                        "type":"text",
-                        "value":"Las circunstancias y las experiencias de vida pueden influir en el desarrollo de una mentalidad fija o de crecimiento. Por ejemplo:"
-                    },
+                   
                     
                     
                     
@@ -534,6 +531,10 @@ export let assign3 ={
                     {
                         "type":"markdown",
                         "value":"/assets/images/assign3/1.md"
+                    },
+                    {
+                        "type":"text",
+                        "value":"Las circunstancias y las experiencias de vida pueden influir en el desarrollo de una mentalidad fija o de crecimiento. Por ejemplo:"
                     },
                     {
                         "type":"list",

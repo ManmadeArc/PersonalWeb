@@ -489,7 +489,40 @@ exports.assign3 = {
                 {
                     "type": "markdown",
                     "value": "/assets/images/assign3/1.md"
-                }
+                },
+                {
+                    "type": "text",
+                    "value": "Las circunstancias y las experiencias de vida pueden influir en el desarrollo de una mentalidad fija o de crecimiento. Por ejemplo:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        { "level": 0, "value": `La educación: Las personas que han sido alentadas a aprender y crecer a través de la educación y han recibido retroalimentación positiva en su proceso de aprendizaje, son más propensas a desarrollar una mentalidad de crecimiento. Aquellos que han sido etiquetados como "inteligentes" o "talentosos" pueden desarrollar una mentalidad fija, ya que creen que su éxito se debe a su capacidad innata y no a su esfuerzo.` },
+                        { "level": 0, "value": "La cultura: Las culturas que enfatizan el esfuerzo, la perseverancia y el aprendizaje continuo pueden fomentar una mentalidad de crecimiento. Por otro lado, las culturas que valoran la inteligencia y el talento pueden fomentar una mentalidad fija, ya que se espera que las personas demuestren su capacidad innata sin esforzarse demasiado." },
+                        { "level": 0, "value": "Las experiencias personales: Las personas que han tenido éxito fácil y temprano en la vida pueden desarrollar una mentalidad fija, ya que pueden atribuir su éxito a su capacidad innata en lugar de al esfuerzo. Aquellos que han enfrentado desafíos y fracasos y han aprendido de ellos son más propensos a desarrollar una mentalidad de crecimiento, ya que han aprendido que pueden superar los obstáculos con el esfuerzo y la dedicación." }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "En general, la mentalidad fija se basa en el miedo al fracaso y la necesidad de demostrar una capacidad innata, mientras que la mentalidad de crecimiento se basa en la pasión por el aprendizaje y la voluntad de mejorar a través del esfuerzo. Es importante tener en cuenta que ambas mentalidades son susceptibles de cambiar y se pueden desarrollar a lo largo del tiempo con la práctica y la conciencia."
+                },
+                {
+                    "type": "text",
+                    "value": "Para fomentar el desarrollo de una mentalidad de crecimiento o 'growth mindset', se pueden tomar en cuenta las siguientes acciones:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        { "level": 0, "value": "Enfatizar el proceso y el esfuerzo en lugar de los resultados: en lugar de centrarse en los resultados finales, se debe prestar atención al proceso y el esfuerzo que se requiere para lograrlos. Se puede fomentar la idea de que el aprendizaje y la mejora son procesos continuos y no un objetivo final." },
+                        { "level": 0, "value": "Reconocer y aprender de los errores: en lugar de evitar los errores o verlos como fracasos, se deben reconocer como oportunidades para aprender y mejorar. Se puede fomentar la idea de que los errores son una parte natural del aprendizaje y son una oportunidad para crecer y mejorar." },
+                        { "level": 0, "value": "Promover la persistencia y la resiliencia: se debe fomentar la idea de que el esfuerzo y la perseverancia son claves para lograr el éxito. Se puede alentar a las personas a no rendirse ante los obstáculos y a mantener una actitud positiva y de resiliencia ante los desafíos." },
+                        { "level": 0, "value": "Evitar elogios innecesarios sobre la inteligencia o las habilidades innatas: en lugar de elogiar a alguien por su inteligencia o habilidades innatas, se deben elogiar los esfuerzos y los procesos de aprendizaje que llevaron al éxito. Esto ayudará a las personas a desarrollar una mentalidad de crecimiento en lugar de una mentalidad fija." }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Para caer en estas formas de pensar, es importante estar consciente de nuestras propias creencias y pensamientos sobre nuestras habilidades y el aprendizaje en general. Si se tiene una mentalidad fija, se puede trabajar en cambiar esos pensamientos y creencias a través de la práctica y la reflexión. Se puede buscar oportunidades de aprendizaje y desafíos que promuevan el desarrollo de una mentalidad de crecimiento. También se puede buscar el apoyo de amigos, familiares o mentores que compartan una mentalidad de crecimiento y que puedan brindar orientación y aliento"
+                },
             ]
         }
     ]
