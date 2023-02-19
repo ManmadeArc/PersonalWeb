@@ -1,0 +1,19 @@
+{
+    "Comment": "Validation DNS RECORD",
+    "Changes": [
+      {
+        "Action": "UPSERT",
+        "ResourceRecordSet": {
+          "Name": "_09e5859f86555aa590968b65207a7215.marcos.cetystijuana.com",
+          "Type": "CNAME",
+          "TTL":300,
+          "ResourceRecords": [
+            {
+              "Value": "_a2d29e99d69963d8bfb3a14bba8e0103.xyscsmcmgv.acm-validations.aws."
+            }
+          ]
+        }
+      }
+    ]
+}
+  

@@ -1,10 +1,115 @@
 
-<h4> Bienvenido a la asignacion</h4>
-<span>Warning : Este Layout Es Temporal -> Sera Mejorado</span>
-<h1> {{title}}</h1>
+<div class="header">
+
+    <div class="text-title"> {{title}}</div>
+</div>
 
 
-<pdf-viewer [src]="pdflink"
+<div  class="homework-container" *ngIf="data!=null">
+
+    <div id="top" class="index">
+       
+
+        <div *ngFor="let topic of data.sections; let i = index" >
+            <a (click)="scrollDown(i)"> 
+                <h4 class="link">
+                {{topic.question}}
+                </h4>
+                
+                <h5  *ngFor="let sub of topic.subtitles" class="text" style="padding-left: 7rem ;">{{sub}}</h5>
+            </a>
+            </div>
+    </div>
+
+
+    <div class="content">
+
+        <div class="question" *ngFor="let topic of data.sections; let i = index" id="{{i}}"> 
+
+            <h1 class="title">{{topic.question}} </h1>
+            <h4 *ngFor="let sub of topic.subtitles" class="text" style="padding-left: 7rem ;">{{sub}}</h4>
+
+            <div class="answer">
+
+                <div *ngFor="let paragraph of topic.content" >
+
+                    
+                    <div *ngIf="paragraph.type=='text'" class="text">
+                        
+                            {{paragraph.value}}
+                        
+                    </div>
+
+                    <div *ngIf="paragraph.type=='subtitle'" class="subtitle">
+                        
+                        {{paragraph.value}}
+                    
+                    </div>
+
+                    <div *ngIf="paragraph.type=='image'" class="img">
+                       <img class="image" [src]="paragraph.value">
+                    </div>
+
+                    <!-- <ngx-json-viewer *ngIf="paragraph.type=='json'" [json]="paragraph['obj']" [depth]="3"></ngx-json-viewer> -->
+                    
+                    <div *ngIf="paragraph.type=='json'" >
+                        <markdown
+                        lineNumbers
+                        [src]="paragraph.value"
+                        >
+                        </markdown>
+                    </div>
+
+
+                    <div *ngIf="paragraph.type=='code'" >
+                        <div *ngIf="!paragraph.value.includes('/assets/images/assign')" [innerHTML]="paragraph.value | language : 'Javascript' | markdown"></div>
+
+                        <markdown
+                        *ngIf="paragraph.value.includes('/assets/images/assign')"
+                        lineNumbers
+                        [src]="paragraph.value"
+                        >
+                        </markdown>
+
+                    </div>
+
+                    <div *ngIf="paragraph.type=='markdown'" >
+                        <markdown
+                        [src]="paragraph.value"
+                        >
+                        </markdown>
+                    </div>
+
+                    <div *ngIf="paragraph.type=='list'">
+
+
+                    <div *ngFor="let item of paragraph.value">
+                        
+                        <li class="text" style="padding-left: {{ item['level'] * 4}}rem ;">{{item.value}}</li>
+                    </div>
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="answer">   
+    <button class="btn" (click)="scrollDown('top')">
+        Ir al index
+       </button>
+    </div>
+</div>
+
+
+<pdf-viewer   *ngIf="data==null"
+              [src]="pdflink"
               [render-text]="true"
               [original-size]="false"
               style="width: 60vw; height:100vh"

@@ -9,7 +9,7 @@
     "test": "ng test",
     "scully": "npx scully --",
     "scully:serve": "npx scully serve --",
-    "build-static":"ng build && npx scully --scanRoutes && npx scully serve --"
+    "build-static": "ng build && npx scully --scanRoutes && npx scully serve --"
   },
   "private": true,
   "dependencies": {
@@ -23,12 +23,21 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/platform-server": "^12",
     "@angular/router": "^14.0.0",
+    "@fortawesome/angular-fontawesome": "^0.10.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@scullyio/init": "^2.1.41",
     "@scullyio/ng-lib": "^2.1.0",
     "@scullyio/platform-server": "^2.1.0",
     "@scullyio/scully": "^2.1.0",
     "@scullyio/scully-plugin-puppeteer": "^2.1.41",
+    "clipboard": "^2.0.11",
+    "marked": "^4.2.12",
+    "mermaid": "^9.3.0",
     "ng2-pdf-viewer": "^9.1.3",
+    "ngx-json-viewer": "^3.2.1",
+    "ngx-markdown": "^11.0.0",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -39,6 +48,7 @@
     "@angular/compiler-cli": "^14.0.0",
     "@gammastream/scully-plugin-http404": "^1.0.4",
     "@types/jasmine": "~4.0.0",
+    "@types/marked": "^4.0.8",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

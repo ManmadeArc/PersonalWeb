@@ -10,6 +10,16 @@ import { ContainerComponent } from './components/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import {SecurityContext} from '@angular/core'
+import { MarkdownModule} from "ngx-markdown";
+import { SafePipe } from './pipes/safe-pipe.pipe';
+import { AboutComponent } from './components/about/about.component';
+
+
+
+
+
 
 
 @NgModule({
@@ -19,13 +29,25 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     SidebarComponent,
     ContainerComponent,
     NotFoundComponent,
+    SafePipe,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MarkdownModule.forChild(),
+    NgxJsonViewerModule,
+    MarkdownModule.forRoot({
+      sanitize: SecurityContext.NONE
+    }),
+   
+
+    
+ 
+
     //NgMaterialModule
   ],
   providers: [],

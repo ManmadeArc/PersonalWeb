@@ -1,5 +1,5 @@
 
-
+<!-- 
 <h2>ICE191 - Sistemas de Arquitectura Abierta</h2>
 <h3>Todos Sabemos que es cloud computing a nadie vamos a engañar</h3>
 
@@ -14,6 +14,76 @@
 
        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6MfVRZkz1u4VFOrahEVBqf?utm_source=generator" 
         width="100%" height="450" frameBorder="0" allowfullscreen="" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" >
         </iframe> 
+</div>
+
+<div>
+    <span>
+        Otra Playlist  
+    </span>
+
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0GabfeKInegF9zVm3ot23V?utm_source=generator" 
+    width="100%" height="450" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    ></iframe>
+
+</div> -->
+
+<div class="container">
+
+    <div class="card">
+        
+        <div> ICE191 - Sistemas de Arquitectura Abierta</div>
+
+    </div>
+
+
+    <div class="card"> 
+
+        <div> Acerca de la Clase</div>
+
+        <span>
+            El propósito de esta página web es el de servir como portafolio para las actividades realizadas en la clase de Software Architecture AKA Cloud Cloud Computing.        
+        </span>
+
+        <div> ¿Qué es la arquitectura de nube?</div>
+
+        <span>
+            La arquitectura de nube hace referencia a la forma en la que se integran las distintas tecnologías para crear las nubes, es decir, los entornos de TI que separan, agrupan y comparten los recursos flexibles a través de la red. La arquitectura define la manera en la que se conectan todos los elementos y las funciones necesarios para diseñar la nube: la plataforma en línea donde se pueden ejecutar las aplicaciones.
+        </span>
+
+        <div> ¿Qué espero aprender del curso?</div>
+
+        <span>
+            Para el final del curso, espero aprender de la clase una serie de estrategias que me permitan, analizar y diseñar sistemas distribuidos en la nube. Para de esta manera poder tomar decisiones informadas a la hora de realizar decisiones de arquitectura, además de diseñar sistemas estables con mecanismos de deploy automáticos que permitan identificar errores y manejarlos. 
+        </span>
+
+    </div>
+
+
+    <div class="carousel">
+
+        <div class="title"> Playlist Recomendadas | Japanese Music </div>
+
+   
+        <div class="selector">
+
+            
+            <button (click)="previous()" >  <h3> < </h3> </button>
+            
+            <div class="content">
+            <iframe style="border-radius:12px" [src]="playlists[index] | safe"
+            width="100%" height="100%" frameBorder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"></iframe>
+            </div>
+
+            <button (click)="next()"> <h3> > </h3></button>
+            
+             
+        </div>
+
+    </div>
+   
+    
 </div>

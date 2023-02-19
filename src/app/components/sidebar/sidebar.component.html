@@ -2,23 +2,27 @@
 
     <div class="header">
 
-        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6MfVRZkz1u4VFOrahEVBqf?utm_source=generator" 
-        width="100%" height="120" frameBorder="0" allowfullscreen="" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-
-        <img  class="profile-img" src="/assets/images/playlist.jpg"><img> -->
 
         <div class="simple-container">
         <div class="android-like-container">
         
-            
-        <h3>Marcos Alberto Moroyoqui Olan
-            <br>
-            030934
-            <br>
-            marcos.moroyoqui@cetys.edu.mx
-        </h3>
+            <div class="text-container">
+                
+                <h4 class="text"> marcos.moroyoqui@cetys.edu.mx </h4>
+            </div>
+           
+            <div class="text-container">
+             
+                <h4 class="text">030934</h4>
+                
+            </div>
+            <div class="text-container">
+                <h4 class="text">Marcos Alberto Moroyoqui Olan</h4>
+             
+            </div>
+           
+       
+        
        
         </div>
   
@@ -34,16 +38,17 @@
 
             <div class="collapsible-accordion" *ngFor="let link of links">
 
-                <div *ngIf="link.type=='single'">
-                    <a [routerLink]="link.link">  {{link.title}}</a>
-                </div>
+                
+                <a class="simple-item" *ngIf="link.type=='single'" [routerLink]="link.link">  {{link.title}}</a>
+            
 
                 <div class="collapsible-item" *ngIf="link.type=='multiple'">
                     <input type="checkbox" id="tab{{link.title}}">
                     <label class="collapsible-item-label" for="tab{{link.title}}">{{link.title}} </label>
                     <div class="collapsible-item-content" >
                     <div *ngFor="let child of link.childs">
-                        <a [routerLink]="[link.link + child['resource-id']]"> {{child.title}}</a>
+                        <a class="secondary-item" [routerLink]="[link.link + child['resource-id']]"> {{child.title}}</a>
+                        <br>
                     </div>
                     </div>
                   </div>
@@ -53,6 +58,11 @@
             
 
            
+        </div>
+        <div class="social">
+            <a href="https://www.linkedin.com/in/marcos-alberto-moroyoqui-olan-2ba0b8108/"><i   class="fa fa-linkedin icons" ></i></a>
+            <a href="https://github.com/ManmadeArc"><i  h class="fa fa-github icons" ></i></a>
+            <a href="https://www.researchgate.net/profile/Marcos-Moroyoqui-Olan"><i   class="fa fa-flask icons"></i></a>
         </div>
     </div>
 

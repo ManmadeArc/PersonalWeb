@@ -1,0 +1,11 @@
+{
+    "id": {
+        "S": "000000"
+    },
+    "full_name": {
+        "S": "Fake Student"
+    },
+    "personal_website": {
+        "S": "website.amazon.es"
+    }
+}

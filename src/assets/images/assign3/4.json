@@ -1,0 +1,20 @@
+{
+    "Comment": "Update DNS record to point ",
+    "Changes": [
+      {
+        "Action": "UPSERT",
+        "ResourceRecordSet": {
+          "Name": "marcos.cetystijuana.com",
+          "Type": "CNAME",
+          "TTL":3000,
+          "ResourceRecords": [
+            {
+              "Value": "marcos.cetystijuana.com.s3-website.us-east-1.amazonaws.com/"
+            }
+          ]
+        }
+      },
+      
+    ]
+}
+  

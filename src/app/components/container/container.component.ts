@@ -1,6 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { assigments } from 'src/assigments';
+import { ViewportScroller } from "@angular/common";
+
 
 @Component({
   selector: 'app-container',
@@ -11,7 +15,9 @@ export class ContainerComponent implements OnInit,AfterViewInit {
 
   title = "Upss Theres No Assigment"
   pdflink = "None"
-  constructor(private route: ActivatedRoute,  private router:Router) { }
+  data:any
+  json:any
+  constructor(private route: ActivatedRoute,  private router:Router, private http: HttpClient,private scroller: ViewportScroller) { }
 
 
   async ngOnInit(): Promise<void> {
@@ -19,11 +25,14 @@ export class ContainerComponent implements OnInit,AfterViewInit {
       let work = params['id'] ??null
       let info =assigments.links.filter(x=>x.title=="Asignaciones" && x.childs.length>0).map(x=>x.childs)[0].filter(x=>x['resource-id']==work)
       let exists = info.length>0
-      
       if(!exists) this.router.navigateByUrl("/404")
       this.pdflink = info[0]['pdf-route']
-      console.log(work)
-      this.title = work
+      this.title = info[0]['title']
+      this.data=info[0]['data'] ??null
+      await this.loadJsons()
+      
+      console.log(this.data)
+
     })
     
     
@@ -32,6 +41,36 @@ export class ContainerComponent implements OnInit,AfterViewInit {
 
  ngAfterViewInit(): void {
      
+ }
+
+ scrollDown(id:number | string):void{
+
+let doc = id.toString() ?? ""
+  document.getElementById(doc)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest"
+  });
+ }
+
+ async loadJsons():Promise<void>{
+
+  for (let topic of this.data.sections){
+    for( let par of topic.content ){
+      if(par.type=="json"){
+        par.obj = await this.getJson(par.value)
+      }
+    }
+  }
+
+ }
+
+ async getJson(assets:string):Promise<any>{
+
+
+  let data = await lastValueFrom( this.http.get(assets))
+  console.log(data)
+  return data
  }
 
 

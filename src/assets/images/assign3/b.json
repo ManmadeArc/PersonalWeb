@@ -1,0 +1,32 @@
+{
+    "Comment": "Update DNS record to point ",
+    "Changes": [
+      {
+        "Action": "DELETE",
+        "ResourceRecordSet": {
+          "Name": "_09e5859f86555aa590968b65207a7215.marcos.cetystijuana.com",
+          "Type": "CNAME",
+          "TTL":3000,
+          "ResourceRecords": [
+            {
+              "Value": "_a2d29e99d69963d8bfb3a14bba8e0103.xyscsmcmgv.acm-validations.aws."
+            }
+          ]
+        }
+      },
+      {
+        "Action": "DELETE",
+        "ResourceRecordSet": {
+          "Name": "m_09e5859f86555aa590968b65207a7215.marcos.cetystijuana.com",
+          "Type": "CNAME",
+          "TTL":3000,
+          "ResourceRecords": [
+            {
+              "Value": "_a2d29e99d69963d8bfb3a14bba8e0103.xyscsmcmgv.acm-validations.aws."
+            }
+          ]
+        }
+      }
+    ]
+}
+  

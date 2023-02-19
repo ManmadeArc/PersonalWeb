@@ -2,3 +2,54 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+:root{
+    /* Rizu Taneda */
+    /* --light: #CACCCCff;
+    --accent: #382855ff;
+    --background: #959FADff;
+    --shadow: #2C213Cff;
+    --primary: #4C4877ff; */
+
+    /* Urara Shiraishi */
+    --accent: #98383Fff;
+    --shadow: #3C1F19ff;
+    --background: #C3A3A0ff;
+    --primary: #712830ff;
+    --light: #E7C0B1ff;
+
+    /* Blue Random Image */
+    /* --light: #CAD2DFff;
+    --background: #A2B5D3ff;
+    --primary: #486EAFff;
+    --shadow: #10141Eff;
+    --accent: #1D2C4Aff; */
+
+        /*  MArin : Rizu */
+    /* --accent: #4B2626ff;
+    --light: #E9D8E0ff;
+    --shadow: #2C1916ff;
+    --background: #B1949Eff;
+    --primary: #A94F4Dff; */
+
+    /* Marin Kitagawa */
+
+    /* --shadow: #2C2118ff;
+    --accent: #88544Aff;
+    --primary: #A85550ff;
+    --background: #E0B584ff;
+    --light: #DABFA4ff; */
+
+    /*  Ryo Yamada */
+    /* --primary: #1A7CC3ff;
+    --accent: #28547Eff;
+    --light: #A7B1ABff;
+    --shadow: #0F1F39ff;
+    --background: #5E5F61ff; */
+    
+
+
+
+}

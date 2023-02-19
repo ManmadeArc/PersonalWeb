@@ -1,0 +1,7 @@
+{"ViewerCertificate": {
+    "ACMCertificateArn": "arn:aws:acm:us-east-1:292274580527:certificate/390bbe14-51d0-4058-9e51-a3779902e01a",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1"
+
+}
+}

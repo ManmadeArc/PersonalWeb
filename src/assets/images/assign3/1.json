@@ -1,0 +1,55 @@
+{
+    "CallerReference": "2023-02-06-marcos-website-dist",
+    "Origins": {
+      "Quantity": 1,
+      "Items": [
+        {
+          "Id": "S3Origin",
+          "DomainName": "marcos.cetystijuana.com.s3-website.us-east-1.amazonaws.com",
+          "CustomOriginConfig": {
+            "HTTPPort": 80,
+            "HTTPSPort": 443,
+            "OriginProtocolPolicy": "http-only",
+            "OriginSslProtocols": {
+              "Quantity": 2,
+              "Items": [
+                "TLSv1",
+                "TLSv1.1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "DefaultCacheBehavior": {
+      "TargetOriginId": "S3Origin",
+      "ViewerProtocolPolicy": "redirect-to-https",
+      "AllowedMethods": {
+        "Quantity": 2,
+        "Items": [
+          "HEAD",
+          "GET"
+        ],
+        "CachedMethods": {
+          "Quantity": 2,
+          "Items": [
+            "HEAD",
+            "GET"
+          ]
+        }
+      },
+      "ForwardedValues": {
+        "QueryString": false,
+        "Cookies": {
+          "Forward": "none"
+        }
+      },
+      "MinTTL": 0,
+      "DefaultTTL": 3600,
+      "MaxTTL": 86400
+    },
+    "Enabled": true,
+    "DefaultRootObject": "index.html",
+    "Comment":" "
+  }
+  
