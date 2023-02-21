@@ -1,3 +1,4 @@
+import { assign4 } from "./homeworks/assign4"
 import { assign1 } from "./homeworks/assign_1"
 import { assign2 } from "./homeworks/assign_2"
 import { assign3 } from "./homeworks/assign_3"
@@ -35,7 +36,15 @@ export let assigments = {
                     "resource-id": "3",
                     "pdf-route": "/assets/pdf/assign_3.pdf",
                     "data":{...assign3}
-                }
+                },
+                {
+                    "title": "Asignación 4",
+                    "resource-id": "4",
+                    "pdf-route": "/assets/pdf/assign_4.pdf",
+                    "data":{...assign4}
+                },
+                
+                
             ]
         },
         {
