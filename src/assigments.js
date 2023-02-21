@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assigments = void 0;
+const assign4_1 = require("./homeworks/assign4");
 const assign_1_1 = require("./homeworks/assign_1");
 const assign_2_1 = require("./homeworks/assign_2");
 const assign_3_1 = require("./homeworks/assign_3");
@@ -33,7 +34,13 @@ exports.assigments = {
                     "resource-id": "3",
                     "pdf-route": "/assets/pdf/assign_3.pdf",
                     "data": { ...assign_3_1.assign3 }
-                }
+                },
+                {
+                    "title": "Asignación 4",
+                    "resource-id": "4",
+                    "pdf-route": "/assets/pdf/assign_4.pdf",
+                    "data": { ...assign4_1.assign4 }
+                },
             ]
         },
         {

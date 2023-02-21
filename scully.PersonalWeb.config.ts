@@ -12,6 +12,22 @@ console.log(handler)
 export const config: ScullyConfig = {
   projectRoot: "./src",
   projectName: "PersonalWeb",
+  puppeteerLaunchOptions: {
+    args: [
+      "--disable-gpu",
+      "--renderer",
+      "--no-sandbox",
+      "--no-service-autorun",
+      "--no-experiments",
+      "--no-default-browser-check",
+      "--disable-dev-shm-usage",
+      "--disable-setuid-sandbox",
+      "--no-first-run",
+      "--no-zygote",
+      "--single-process",
+      "--disable-extensions"
+    ]
+  },
   //spsModulePath: 'YOUR OWN MODULE PATH HERE',
   outDir: './dist/static',
   defaultPostRenderers: [Http404Plugin],
@@ -21,4 +37,6 @@ export const config: ScullyConfig = {
     
     }
   }
+
+  
 };

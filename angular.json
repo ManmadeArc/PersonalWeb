@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "PersonalWeb"
+  "defaultProject": "PersonalWeb",
+  "cli": {
+    "analytics": false
+  }
 }
