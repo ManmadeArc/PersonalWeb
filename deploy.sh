@@ -29,7 +29,7 @@
 
 # cd $dist;
 # aws s3 sync ./ "s3://$bucketName"
-# status="COMPLETED"
+status="COMPLETED"
    
    
 # echo "Deployment  completed succesfully"
