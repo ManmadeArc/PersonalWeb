@@ -36,7 +36,9 @@ echo "Deployment  completed succesfully"
 
 
 #Commit Changes And report bugs
-cd $origin
+
+cd "$origin";
+
 git add .
 git commit -m "$status Deployment $(date)"
 git push
