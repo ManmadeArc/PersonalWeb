@@ -56,6 +56,7 @@ let doc = id.toString() ?? ""
  async loadJsons():Promise<void>{
 
   for (let topic of this.data.sections){
+    if(Object.keys(topic).length>0)
     for( let par of topic.content ){
       if(par.type=="json"){
         par.obj = await this.getJson(par.value)

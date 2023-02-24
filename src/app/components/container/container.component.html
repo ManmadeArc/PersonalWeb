@@ -85,7 +85,7 @@
 
                     <div *ngFor="let item of paragraph.value">
                         
-                        <li class="text" style="padding-left: {{ item['level'] * 4}}rem ;">{{item.value}}</li>
+                        <li class="text" style="padding-left: {{4 + item['level'] * 4}}rem ;">{{item.value}}</li>
                     </div>
 
                     </div>

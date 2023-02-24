@@ -80,6 +80,56 @@ exports.assign4 = {
                             "value": " Mejora la calidad del servicio: Al limitar la cantidad de solicitudes que un cliente puede enviar en un período de tiempo determinado, el proveedor de la API puede garantizar que todos los usuarios tengan acceso a un servicio de alta calidad y que la API esté disponible y sea fácil de usar."
                         }
                     ]
+                },
+                {
+                    "type": "text",
+                    "value": " Sin embargo, a pesar de suponer ciertas ventajas, el desarrollo o implementación de este tipo de API’s tienen diferentes desventajas. Entre ellos podemos encontrar"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        {
+                            "level": "0",
+                            "value": "Le complicas la vida al usuario. Si el desarrollador configura un límite de peticiones de API’s al usuario el cual es irrazonable, los desarrolladoras pueden complicar la comunicación y utilización del api."
+                        },
+                        {
+                            "level": "0",
+                            "value": "Puede afectar la experiencia del usuario. Si los request del api son limitados ampliamente, la información disponible o accesible al usuario podría tardarse demasiado tiempo , en ser reflejada en los sistemas en vivo , ya que las desarrolladoras tendrían que implementar algún tipo de cache que se actualiza cada cierto tiempo para evitar el limite de solicitudes de api. Empeorado la experiencia de usuario para quienes utilicen este api."
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": " Para poder implementar throttling API’s existen varias formas entre ellas podemos encontrar las siguientes."
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        {
+                            "level": "0",
+                            "value": " Por tiempo: En este tipo de implementación se limita el numero de solicitudes que se pueden hacer en un periodo de tiempo,"
+                        },
+                        {
+                            "level": "0",
+                            "value": " Por Ancho de Banda En este tipo de aplicaciones, en lugar de limitar el numero de solicitudes, se limita la cantidad de información que es enviada durante un margen de tiempo."
+                        },
+                        {
+                            "level": "0",
+                            "value": " Por velocidad de transmisión: En este tipo de implementación,  se limita la velocidad a la que el servidor responde a las request de las distintos endpoints, por el tipo de contenido acción que se requiera realizar."
+                        },
+                        {
+                            "level": "0",
+                            "value": "Dinámico: El sistema ajusta la velocidad de transferencia para las distintas request en función del tráfico que la red en general este sufriendo."
+                        },
+                        {
+                            "level": "0",
+                            "value": "Por IP : Un api solo puede responder a ciertas IP’s registradas."
+                        },
+                        {
+                            "level": "0",
+                            "value": " Por Numero de Conexiones Concurrentes: En este tipo de throttling api, limitas el numero de usuario o clientes que pueden utilizar tu api."
+                        }
+                    ]
                 }
             ]
         },
@@ -104,7 +154,7 @@ exports.assign4 = {
                 },
                 {
                     "type": "text",
-                    "value": "Sin embargo, a pesar de ser beneficioso para ahorrar costos la pagina tio n apis incluyen algunas desventajas como lo son"
+                    "value": "Sin embargo, a pesar de ser beneficioso para ahorrar costos la pagination apis incluyen algunas desventajas como lo son"
                 },
                 {
                     "type": "list",
@@ -120,6 +170,27 @@ exports.assign4 = {
                         {
                             "level": "0",
                             "value": "Pueden afectar la experiencia del usuario: Si la información paginada necesita ser procesada por el servidor, el uso de la misma puede incluir retrasos en el uso de la aplicación debido a la carga de datos."
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": " Para implementar API’s de paginación existen diferentes métodos y acercamientos que pueden funcionar para realizar la implementación, teniendo diferentes comportamientos, pero obteniendo un resultado similar. Entre estos métodos podemos encontrar los siguientes:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        {
+                            "level": "0",
+                            "value": "Offset y límite: Para hacer solicitud de una cierta cantidad de elementos, podemos especificar un offset, es decir el número de elementos que vamos a “saltar” u omitir, y un límite , que es el número máximo de elementos a incluir en nuestra solicitud."
+                        },
+                        {
+                            "level": "0",
+                            "value": "Cursores: En este tipo de api, se crea utiliza un elemento llamado cursor, el cual identifica a un conjunto especifico de elementos,  de esta manera para solicitar un conjunto de elementos en específico se debe referencia a dicho cursor."
+                        },
+                        {
+                            "level": "0",
+                            "value": "Por rangos: Este método utiliza rangos numéricos para la paginación, en lugar de un offset y límite. En este método, se especifica un rango de valores que se deben incluir en la página actual."
                         }
                     ]
                 }
@@ -193,6 +264,60 @@ exports.assign4 = {
                             "value": " Automatización: Las funciones de devolución de llamada se pueden utilizar para automatizar tareas en la nube. Por ejemplo, las funciones de devolución de llamada se pueden utilizar para monitorear y responder automáticamente a eventos y alertas en la nube, como el aumento del tráfico o la caída de un servicio."
                         }
                     ]
+                },
+                {
+                    "type": "text",
+                    "value": " Los lenguajes de programación que aceptan funciones callback, cumplen algunas características en común. Entre ellas podemos encontrar las siguientes:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        {
+                            "level": "0",
+                            "value": "Debe poder interpretar una función como un objeto . (Funciones de primera clase)"
+                        },
+                        {
+                            "level": "0",
+                            "value": "Deben tener la capacidad de ejecuciones asíncronas ."
+                        },
+                        {
+                            "level": "0",
+                            "value": " Es útil cuando el lenguaje soporta funciones anónimas (Lambda)"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": " A estos tipos de lenguajes se les suele etiquetar como lenguajes que soportan el paradigma funcional, donde  estos mismos buscan fungir como lenguajes declarativos en donde el programador declara lo que realizara, y no tiene que lidiar explícitamente con el estado de los objetos. Entre algunos de los lenguajes mas utilizados podemos encontrar los siguientes:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        {
+                            "level": "0",
+                            "value": "JavaScript / TypeScript"
+                        },
+                        {
+                            "level": "0",
+                            "value": " Python"
+                        },
+                        {
+                            "level": "0",
+                            "value": " C#"
+                        },
+                        {
+                            "level": "0",
+                            "value": " C++"
+                        },
+                        {
+                            "level": "0",
+                            "value": " Ruby"
+                        },
+                        {
+                            "level": "0",
+                            "value": " Java"
+                        }
+                    ]
                 }
             ]
         },
@@ -243,6 +368,22 @@ exports.assign4 = {
                 {
                     "type": "text",
                     "value": "En resumen, una funcion lambda debe realizar operaciones o acciones atómicas ( especificas) con el fin de disminuir los tiempos de cold start ."
+                },
+                {
+                    "type": "text",
+                    "value": "Otro de los casos en el cual puede suceder un cold start, es cuando una instancia determinada de un servicio que se aloja en aws Lambda, supera el número máximo de invocaciones o ejecuciones concurrentes. (Generalmente cuando la instancia no puede ocupar más recursos para el procesamiento de los datos), por lo que AWS Lambda , para satisfacer la demanda, levanta otro servicio similar al anterior, con el fin de poder redirigir el trafico a esta nueva instancia para su procesamiento. A este tiempo de levantar la instancia también se le conoce como cold start."
+                },
+                {
+                    "type": "text",
+                    "value": "Uno de los métodos mas eficaces para evitar el cold “start” de una lambda , pasa por programar la realizar el procesamiento de un lote de información cada cierto tiempo. Como vimos anteriormente, para que un cold start suceda, es necesario que la instancia se mantenga inactiva por un cierto periodo de tiempo. Si nosotros hacemos que cada cierto tiempo, la instancia este procesando una cantidad de información en específico , entonces aws no renovara la instancia de nuestra aplicación de memoria evitando el cold start."
+                },
+                {
+                    "type": "text",
+                    "value": "Para realizar esto se pueden implementar métodos rudimentarios, como el crear un cron en algún servicio para solicitar el procesado de información cada cierto tiempo. Sin embargo, aws nos facilita esto mediante la utilización de Scheduled Lambdas. Estas son funciones Lambda que se ejecutan periódicamente según una planificación predefinida en AWS CloudWatch ."
+                },
+                {
+                    "type": "text",
+                    "value": "Por ejemplo, en lugar de tener una función Lambda (En CloudWatch Events) que se ejecute cada vez que se realiza una solicitud a una API, se podría programar una función Lambda para que se ejecute cada cierto tiempo y mande a llamar al la Lambda original para que esta realice una serie de tareas o procesamiento en lotes . De esta manera, se puede evitar el \"cold start\" ya que la función Lambda se mantendrá caliente y lista para ejecutarse en cualquier momento en lugar de tener que crear su entorno de ejecución desde cero cada vez que se realiza una solicitud."
                 }
             ]
         },

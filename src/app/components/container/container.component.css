@@ -27,7 +27,7 @@
 .answer{
     display: flex;
     flex-direction: column;
-    align-items: center;
+  
 }
 
 
@@ -62,16 +62,27 @@
 }
 
 .img{
-    max-width: 100%;
-    ;
+    display: flex;
+    max-width: 60vw;
+    flex-direction: column;
+  
 }
 
 .image{
-    max-width: 60vw;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    
+
 }
 
 .subtitle{
     color: var(--accent);
     font-size: 2rem;
 
+}
+
+.helper-container{
+    display: flex;
+    align-items: center;
 }
