@@ -38,5 +38,5 @@
 # #Commit Changes And report bugs
 # cd $origin
 git add .
-# git commit -m "$(status) Deployment $(date)"
-# git push
+git commit -m "$(status) Deployment $(date)"
+git push
