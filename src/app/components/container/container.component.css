@@ -65,6 +65,7 @@
     display: flex;
     max-width: 60vw;
     flex-direction: column;
+    padding: 1%;
   
 }
 

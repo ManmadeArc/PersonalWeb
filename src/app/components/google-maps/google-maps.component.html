@@ -1,0 +1,3 @@
+<agm-map  *ngIf="loaded" [latitude]="lat" [longitude]="lng" [zoom]="14">
+    <agm-marker  *ngFor=" let mark of markers" [latitude]="mark.y" [longitude]="mark.x" [label]=" mark.datetime" ></agm-marker>
+  </agm-map>

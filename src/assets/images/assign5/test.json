@@ -1,0 +1,12 @@
+ {
+
+    "resource": "/students/{id}",
+    "path": "/students/12345",
+    "httpMethod": "GET",
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "queryStringParameters": {
+        "id": "12345"
+    }
+}

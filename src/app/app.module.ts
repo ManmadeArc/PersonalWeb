@@ -15,6 +15,8 @@ import {SecurityContext} from '@angular/core'
 import { MarkdownModule} from "ngx-markdown";
 import { SafePipe } from './pipes/safe-pipe.pipe';
 import { AboutComponent } from './components/about/about.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -31,6 +33,8 @@ import { AboutComponent } from './components/about/about.component';
     NotFoundComponent,
     SafePipe,
     AboutComponent,
+    GoogleMapsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,9 +47,10 @@ import { AboutComponent } from './components/about/about.component';
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE
     }),
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    })
    
-
-    
  
 
     //NgMaterialModule

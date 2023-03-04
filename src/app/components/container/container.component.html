@@ -62,7 +62,7 @@
 
 
                     <div *ngIf="paragraph.type=='code'" >
-                        <div *ngIf="!paragraph.value.includes('/assets/images/assign')" [innerHTML]="paragraph.value | language : 'Javascript' | markdown"></div>
+                        <div *ngIf="!paragraph.value.includes('/assets/images/assign')" [innerHTML]="paragraph.value | language : 'bash' | markdown"></div>
 
                         <markdown
                         *ngIf="paragraph.value.includes('/assets/images/assign')"

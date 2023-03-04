@@ -2,7 +2,7 @@ import { assign4 } from "./homeworks/assign4"
 import { assign1 } from "./homeworks/assign_1"
 import { assign2 } from "./homeworks/assign_2"
 import { assign3 } from "./homeworks/assign_3"
-
+import { assign5 } from "./homeworks/assign5"
 export let assigments = {
 
     "links": [
@@ -42,6 +42,12 @@ export let assigments = {
                     "resource-id": "4",
                     "pdf-route": "/assets/pdf/assign_4.pdf",
                     "data":{...assign4}
+                },
+                {
+                    "title": "Asignación 5",
+                    "resource-id": "5",
+                    "pdf-route": "/assets/pdf/assign_4.pdf",
+                    "data":{...assign5}
                 },
                 
                 

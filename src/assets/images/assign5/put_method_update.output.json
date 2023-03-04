@@ -1,0 +1,5 @@
+{
+    "httpMethod": "PUT",
+    "authorizationType": "NONE",
+    "apiKeyRequired": false
+}
