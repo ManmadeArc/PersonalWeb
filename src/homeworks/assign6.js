@@ -530,7 +530,7 @@ exports.assign6 = {
                     "value": "aws apigateway update-method --rest-api-id 009kah5l7l --resource-id 4e6eeo --http-method PUT --patch-operations [{\"op\":\"replace\",\"path\":\"/authorizationType\",\"value\":\"CUSTOM\"},{\"op\":\"replace\",\"path\":\"/authorizerId\",\"value\":\"n1302h\"}]'"
                 },
                 {
-                    "type": "code",
+                    "type": "text",
                     "value": "Una vez esto esté listo, solo necesitaremos crear el deployment de nuestro api para poder usar dichos métodos, esto se hará utilizando el siguiente comando."
                 },
                 {
