@@ -3,6 +3,7 @@ import { assign1 } from "./homeworks/assign_1"
 import { assign2 } from "./homeworks/assign_2"
 import { assign3 } from "./homeworks/assign_3"
 import { assign5 } from "./homeworks/assign5"
+import { assign6 } from "./homeworks/assign6"
 export let assigments = {
 
     "links": [
@@ -46,8 +47,14 @@ export let assigments = {
                 {
                     "title": "Asignación 5",
                     "resource-id": "5",
-                    "pdf-route": "/assets/pdf/assign_4.pdf",
+                    "pdf-route": "/assets/pdf/assign_5.pdf",
                     "data":{...assign5}
+                },
+                {
+                    "title": "Asignación 6",
+                    "resource-id": "6",
+                    "pdf-route": "/assets/pdf/assign_6.pdf",
+                    "data":{...assign6} 
                 },
                 
                 
