@@ -1,9 +1,13 @@
+import { AgmMap } from '@agm/core';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { assigments } from 'src/assigments';
-import { ViewportScroller } from "@angular/common";
+import { GoogleMapsComponent } from '../google-maps/google-maps.component';
+
+// import { ViewportScroller } from "@angular/common";
+
 
 
 @Component({
@@ -17,8 +21,9 @@ export class ContainerComponent implements OnInit,AfterViewInit {
   pdflink = "None"
   data:any
   json:any
-  constructor(private route: ActivatedRoute,  private router:Router, private http: HttpClient,private scroller: ViewportScroller) { }
+  constructor(private route: ActivatedRoute,  private router:Router, private http: HttpClient){}//,private scroller: ViewportScroller) { }
 
+  @ViewChild('geomap',{static:false}) public map!: GoogleMapsComponent;
 
   async ngOnInit(): Promise<void> {
      this.route.params.subscribe(async (params) => {

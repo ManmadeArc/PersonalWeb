@@ -87,3 +87,12 @@
     display: flex;
     align-items: center;
 }
+
+agm-map {
+    width: 80%;
+    height: 80%;
+  }
+map{
+    width: 800px;
+    height: 800px;
+}

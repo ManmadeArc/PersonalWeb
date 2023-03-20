@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { AgmMap } from '@agm/core';
 
 interface coordinates{
   x:number,
@@ -13,30 +14,44 @@ interface coordinates{
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.css']
 })
-export class GoogleMapsComponent implements OnInit {
+export class GoogleMapsComponent implements OnInit, AfterViewInit {
 
   constructor( private http:HttpClient) { }
-
+  @ViewChild('map',{static:false}) public agmMap!: AgmMap ;
   markers:coordinates[] =[]
   lat = 32.522499;
   lng = -116.94193373232736;
   loaded = false
 
   async ngOnInit(): Promise<void> {
-
-    // for (let elem =0 ; elem< 50; elem++){
-    //   this.markers.push(this.generateLocation(this.lat,this.lng,10,0))
-    // }
-    // console.log(this.markers)
-
-  
- 
+    console.log("INIT")
+    // Obtenemos una respuesta de nuestra api
     let response:any = await lastValueFrom (this.http.get('https://009kah5l7l.execute-api.us-east-1.amazonaws.com/dev/locations'))
-    console.log(response)
+    // Obtenemos los puntos
     this.markers =  response['points']
-    console.log(this.markers)
+    // Marcamos el prcesamiento como terminado.
     this.loaded=true
 
+  }
+
+  ngAfterViewInit(): void {
+   
+      setTimeout(() => {
+        console.log(this.agmMap)
+        console.log('Resizing');
+        this.agmMap.triggerResize();
+      }, 1000);
+    
+  }
+
+  async reloadData(): Promise<void>{
+    this.loaded=false
+    // Obtenemos una respuesta de nuestra api
+    let response:any = await lastValueFrom (this.http.get('https://009kah5l7l.execute-api.us-east-1.amazonaws.com/dev/locations'))
+    // Obtenemos los puntos
+    this.markers =  response['points']
+    // Marcamos el prcesamiento como terminado.
+    this.loaded=true
   }
 
 

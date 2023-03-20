@@ -33,7 +33,11 @@
 
                 <div *ngFor="let paragraph of topic.content" >
 
+                    <div *ngIf="paragraph.type=='map'" class="map">
+                        
+                        <app-google-maps #geomap></app-google-maps>
                     
+                </div>
                     <div *ngIf="paragraph.type=='text'" class="text">
                         
                             {{paragraph.value}}
