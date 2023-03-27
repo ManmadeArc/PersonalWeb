@@ -8,6 +8,7 @@ const assign_3_1 = require("./homeworks/assign_3");
 const assign5_1 = require("./homeworks/assign5");
 const assign6_1 = require("./homeworks/assign6");
 const assign8_1 = require("./homeworks/assign8");
+const assign7_1 = require("./homeworks/assign7");
 exports.assigments = {
     "links": [
         {
@@ -55,6 +56,12 @@ exports.assigments = {
                     "resource-id": "6",
                     "pdf-route": "/assets/pdf/assign_6.pdf",
                     "data": { ...assign6_1.assign6 }
+                },
+                {
+                    "title": "Asignación 7",
+                    "resource-id": "7",
+                    "pdf-route": "/assets/pdf/assign_7.pdf",
+                    "data": { ...assign7_1.assign7 }
                 },
                 {
                     "title": "Asignación 8",

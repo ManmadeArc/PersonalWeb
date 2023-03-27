@@ -37,7 +37,17 @@
                         
                         <app-google-maps #geomap></app-google-maps>
                     
-                </div>
+                    </div>
+
+                    <div *ngIf="paragraph.type=='spotify'" class="spotify">
+                        
+                        <iframe style="border-radius:12px" [src]="paragraph.value | safe"
+                        width="100%" height="100%" frameBorder="0" allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"></iframe>
+                    
+                    </div>
+
                     <div *ngIf="paragraph.type=='text'" class="text">
                         
                             {{paragraph.value}}
