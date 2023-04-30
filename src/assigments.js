@@ -9,6 +9,7 @@ const assign5_1 = require("./homeworks/assign5");
 const assign6_1 = require("./homeworks/assign6");
 const assign8_1 = require("./homeworks/assign8");
 const assign7_1 = require("./homeworks/assign7");
+const assign10_1 = require("./homeworks/assign10");
 exports.assigments = {
     "links": [
         {
@@ -68,6 +69,19 @@ exports.assigments = {
                     "resource-id": "8",
                     "pdf-route": "/assets/pdf/assign_8.pdf",
                     "data": { ...assign8_1.assign8 }
+                },
+            ]
+        },
+        {
+            "type": "single",
+            "title": "Examen Final",
+            "link": "/exam/10",
+            "childs": [
+                {
+                    "title": "Final Test",
+                    "resource-id": "10",
+                    "pdf-route": "/assets/pdf/assign_8.pdf",
+                    "data": { ...assign10_1.assign10 }
                 },
             ]
         },

@@ -26,13 +26,36 @@ export class ContainerComponent implements OnInit,AfterViewInit {
   @ViewChild('geomap',{static:false}) public map!: GoogleMapsComponent;
 
   async ngOnInit(): Promise<void> {
+
+    //@ts-ignore
+      if(this.route.url['_value'][0]['path']=="exam"){
+
+
+        this.route.params.subscribe(async (params) => {
+          let work = params['id'] ??null
+          let info =assigments.links.filter(x=>x.title=="Examen Final" && x.childs.length>0).map(x=>x.childs)[0].filter(x=>x['resource-id']==work)
+          let exists = info.length>0 
+          if(!exists) this.router.navigateByUrl("/404")
+    
+          this.pdflink = info[0]['pdf-route']
+          this.title = info[0]['title'] 
+          this.data=info[0]['data'] ??null
+          await this.loadJsons()
+          
+          console.log(this.data)
+    
+        })
+
+        return
+      }
      this.route.params.subscribe(async (params) => {
       let work = params['id'] ??null
       let info =assigments.links.filter(x=>x.title=="Asignaciones" && x.childs.length>0).map(x=>x.childs)[0].filter(x=>x['resource-id']==work)
-      let exists = info.length>0
+      let exists = info.length>0 
       if(!exists) this.router.navigateByUrl("/404")
+
       this.pdflink = info[0]['pdf-route']
-      this.title = info[0]['title']
+      this.title = info[0]['title'] 
       this.data=info[0]['data'] ??null
       await this.loadJsons()
       

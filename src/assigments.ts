@@ -6,6 +6,7 @@ import { assign5 } from "./homeworks/assign5"
 import { assign6 } from "./homeworks/assign6"
 import { assign8 } from "./homeworks/assign8"
 import { assign7 } from "./homeworks/assign7"
+import { assign10 } from "./homeworks/assign10"
 export let assigments = {
 
     "links": [
@@ -72,6 +73,19 @@ export let assigments = {
                 },
                 
                 
+            ]
+        },
+        {
+            "type": "single",
+            "title": "Examen Final",
+            "link": "/exam/10",
+            "childs": [
+                {
+                    "title": "Final Test",
+                    "resource-id": "10",
+                    "pdf-route": "/assets/pdf/assign_8.pdf",
+                    "data":{...assign10} 
+                },
             ]
         },
         {

@@ -15,7 +15,12 @@ const routes: Routes = [
   {
     path:"assigment/:id",
     component:ContainerComponent
-  },{
+  },
+  {
+    path:"exam/:id",
+    component:ContainerComponent
+  },
+  {
     path:"404", 
     component:NotFoundComponent
   },
