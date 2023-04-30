@@ -86,11 +86,3 @@ def getTimeDifference(start,end):
 def stringifyTimeDiffs(diff):
     #Retornamos un string con el formato solicitado
     return "{} days, {} hours, {} minutes".format(diff[0],diff[1],diff[2])
-    
-
-     
-     
-
-
-
-    

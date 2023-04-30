@@ -132,14 +132,4 @@ def random_color_hex():
     #Retornamos el color en formato hexadecimal
     color_hex = f"#{r:02x}{g:02x}{b:02x}"
     return color_hex    
-
-
-if __name__=="__main__":
-    print("This program prints a calendar for a given month and year.")
-    stringPrameter = "20230303-20230404"
-    
-    start,end = parseDates(stringPrameter)
-    print(start," - ",end)
-    
-    print(getTimeDifference(start,end))
     

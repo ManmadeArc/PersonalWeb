@@ -54,6 +54,13 @@
                         
                     </div>
 
+                    <div *ngIf="paragraph.type=='link'" class="link">
+                        
+                        <a [href]="paragraph.value | safe" target="_blank">
+                            {{paragraph.value}}
+                        </a>
+                    </div>
+
                     <div *ngIf="paragraph.type=='subtitle'" class="subtitle">
                         
                         {{paragraph.value}}

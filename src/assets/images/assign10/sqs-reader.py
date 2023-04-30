@@ -1,9 +1,7 @@
 import boto3
 import json
 
-
-
-
+# Creamos el cliente de sqs
 sqs = boto3.client("sqs")
 
 # Url de el sqs sobre el que escribiremos. # Esta url la podemos obtener desde la consola de aws, en la seccion de sqs
@@ -44,4 +42,3 @@ while 'Messages' in response.keys() :
                     QueueUrl=queue_url,
                     ReceiptHandle=handler
                     )
-        

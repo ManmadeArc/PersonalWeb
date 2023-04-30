@@ -156,7 +156,7 @@ exports.assign10 = {
             "content": [
                 {
                     "type": "text",
-                    "value": "La arquitectura de Pub/Sub (Publish an d Suscribe), es una arquitectura la cual busca desacoplar los intereses de 2 entidades, a la hora de llevar a cabo un proceso de comunicación . Para esto, la arquitectura Pub/Sub crea un mecanismo de comunicación asíncrono para que estas dos entidades puedan comunicarse sin la necesidad de conocerse , o crear un canal de comunicación exclusivo."
+                    "value": "La arquitectura de Pub/Sub (Publish and Suscribe), es una arquitectura la cual busca desacoplar los intereses de 2 entidades, a la hora de llevar a cabo un proceso de comunicación . Para esto, la arquitectura Pub/Sub crea un mecanismo de comunicación asíncrono para que estas dos entidades puedan comunicarse sin la necesidad de conocerse , o crear un canal de comunicación exclusivo."
                 },
                 {
                     "type": "text",
@@ -176,6 +176,10 @@ exports.assign10 = {
                 },
                 {
                     "type": "text",
+                    "value": "Por si no quedo claro, El Message Broker es responsable de enrutar los mensajes recibidos a los destinos correctos, lo que puede incluir colas de mensajes o canales de suscripción. Los mensajes pueden ser enrutados a uno o muchos destinos. Los suscriptores pueden recibir mensajes de muchos publicadores, y los publicadores pueden enviar mensajes a muchos suscriptores. El Message Broker es responsable de determinar qué mensajes se envían a qué suscriptores."
+                },
+                {
+                    "type": "text",
                     "value": " Para lograr lo anterior , el esquema pub/ sub hace uso de las siguientes definiciones."
                 },
                 {
@@ -188,7 +192,7 @@ exports.assign10 = {
                 },
                 {
                     "type": "text",
-                    "value": "Con estas definiciones la arquitectura Pub/Sub logra 2 cosas, 1 clasificar el tipo de contenido que un publicador hace y definir que medios o servicios están interesados en recibir mensaje de un tipo en específico ."
+                    "value": "Con estas definiciones la arquitectura Pub/Sub logra 2 cosas,  clasificar el tipo de contenido que un publicador hace y definir que medios o servicios están interesados en recibir mensaje de un tipo en específico ."
                 },
                 {
                     "type": "text",
@@ -201,6 +205,18 @@ exports.assign10 = {
                 {
                     "type": "text",
                     "value": "Por otro lado, el suscriptor ahora solo se encarga de suscribirse a los temas que le son interesantes. Creado su suscripción y notificando al broker , que tipo de mensajes o información / temas está esperando recibir."
+                },
+                {
+                    "type": "text",
+                    "value": "Esta arquitectua  permite una mayor flexibilidad en la manejo de mensajes y una mayor escalabilidad en el procesamiento de datos. Además, la arquitectura Publisher-Subscriber permite la distribución de mensajes en múltiples canales de forma simultánea, lo que facilita la implementación de sistemas distribuidos y la integración de aplicaciones."
+                },
+                {
+                    "type": "text",
+                    "value": "En conclusión, el sistema pub-sub es un modelo de comunicación asincrónico en el que los mensajes son enviados desde un emisor (publicador) a uno o varios receptores (suscriptores) a través de un canal de comunicación ( tema ). Este modelo permite una mayor escalabilidad y flexibilidad en comparación con el modelo punto a punto, ya que los mensajes no están dirigidos a destinatarios específicos, sino que pueden ser recibidos por cualquier suscriptor interesado en un determinado tema."
+                },
+                {
+                    "type": "text",
+                    "value": " Además, el sistema pub-sub también ofrece una mayor tolerancia a fallos y una menor dependencia entre los componentes del sistema, lo que lo hace ideal para entornos distribuidos y para sistemas que manejan grandes cantidades de datos en tiempo real."
                 }
             ]
         },
@@ -221,8 +237,124 @@ exports.assign10 = {
                     ]
                 },
                 {
+                    "type": "text",
+                    "value": "Para hacer la implementación en del calculador de fechas, o tiempo entre fechas procederemos hacer lo siguiente:"
+                },
+                {
+                    "type": "text",
+                    "value": "Crear un endpoints o ruta de acceso al recurso de la siguiente manera: "
+                },
+                {
+                    "type": "text",
+                    "value": "baseUrl/dates/range/Fechas"
+                },
+                {
+                    "type": "text",
+                    "value": "Donde Fechas es un parámetro que se le pasa a la función lambda, el cual contiene las fechas que se quieren comparar, y es un string que sigue el siguiente formato:"
+                },
+                {
+                    "type": "text",
+                    "value": "YYYYMMDD-YYYYMMDD"
+                },
+                {
+                    "type": "text",
+                    "value": "Donde Y son los dígitos de año, M los del mes y D los del días. Ambos serán considerados a  tener 8 caracteres. Estas 2 fechas estarán separadas únicamente por un -.Una vez realizado esto, la fecha será interpretada de la siguiente manera."
+                },
+                {
+                    "type": "text",
+                    "value": "FECHA DE INICIO – FECHA DE FINALIZACION"
+                },
+                {
+                    "type": "text",
+                    "value": "Donde la fecha de inicio se tomará con respecto a las 00:00:00 , y la fecha final se contará a las 23:59:59. Si las fechas se introducen en un orden inverso, se utilizará el valor absoluto de la diferencia entre las 2 fechas. Para realizar lo anterior utilizaremos el siguiente código."
+                },
+                {
                     "type": "code",
                     "value": "/assets/images/assign10/calendar.py"
+                },
+                {
+                    "type": "text",
+                    "value": "Una vez definido dicho código, utilizaremos los siguiente comandos para crear los recursos necesarios y la lambda descrita. Como ya hemos hecho anteriormente , saltare la descripción y pondré únicamente los comandos. SI se quiere más contexto, podemos revisar tareas anteriores."
+                },
+                {
+                    "type": "text",
+                    "value": " Creamos la función lambda"
+                },
+                {
+                    "type": "code",
+                    "value": " aws lambda create-function     --function-name moroyoqui_dates_exam_api --runtime python3.9 --zip-file fileb://cal.zip     --handler api_v1.lambda_handler --role arn:aws: iam::292274580527:role/lambda_ice191 > creation.json"
+                },
+                {
+                    "type": "text",
+                    "value": "Creamos la API y sus recursos (Aprovechamos para crear los recursos del endpoint de la siguiente pregunta)"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-rest-api --name Moroyoqui_ExamAPI > createApiGateWay.output.json"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway get-resources --rest -api-id wl39jcw2rl"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-resource --rest-api-id wl39jcw2rl  --parent-id  8570t41rb2 --path-part date > CreateDateR.output.json"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-resource --rest-api-id  wl39jcw2rl --parent-id cmoyih  --path-part range > CreateRangeApi.output.json"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-resource --rest-api-id  wl39jcw2rl --parent-id 2twckc   --path-part html > CreateHtmlApi.output.json ;"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-resource --rest-api-id wl39jcw2rl  --parent-id 2twckc  --path-part {dates} > CreatedatesApi.output.json"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-resource --rest-api-id wl39jcw2rl  --parent-id idosmn  --path-part {dates} > Createdates2Api.output.json"
+                },
+                {
+                    "type": "text",
+                    "value": "Definimos los métodos de los endpoints y si reciben parámetros"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway put-method     --rest-api-id wl39jcw2rl     --resource-id  vzplh0   --http-method GET     --authorization-type \"NONE\"     --request-parameters \"method.request.path.dates=true\" > put_method.output.json ;"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway put-method     --rest-api-id wl39jcw2rl     --resource-id  obdra8   --http-method GET     --authorization-type \"NONE\"     --request-parameters \"method.request.path.dates=true\" > put_method2.output.json"
+                },
+                {
+                    "type": "text",
+                    "value": " Integramos los métodos con lambda utilizando AWS PROXY y enlazándolo a la funcion lambda que acabamos de crear."
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway put-integration --rest-api-id wl39jcw2rl  --resource-id vzplh0 --http-method GET --type AWS_PROXY --integration-http-method POST --uri arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:292274580527:function:moroyoqui_dates_exam_api/invocations > integration.get.output.json"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway put-integration --rest-api-id wl39jcw2rl  --resource-id obdra8 --http-method GET --type AWS_PROXY --integration-http-method POST --uri arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:292274580527:function:moroyoqui_dates_exam_api/invocations > integration.get.output.json"
+                },
+                {
+                    "type": "text",
+                    "value": "Le damos permiso a la lambda para ser invocada por api gateway"
+                },
+                {
+                    "type": "code",
+                    "value": " aws lambda add-permission --function-name moroyoqui_dates_exam_api --statement-id moroyoqui-api-exam --action lambda:InvokeFunction --principal apigateway.amazonaws.com"
+                },
+                {
+                    "type": "text",
+                    "value": " Creamos el deployment para poder acceder a el mismo"
+                },
+                {
+                    "type": "code",
+                    "value": " aws apigateway create-deployment --rest-api-id wl39jcw2rl --stage-name dev --description 'Deployment to dev stage '"
                 },
                 {
                     "type": "text",
@@ -239,12 +371,44 @@ exports.assign10 = {
                 {
                     "type": "text",
                     "value": "URL : https://wl39jcw2rl.execute-api.us-east-1.amazonaws.com/dev/date/range/<Fechas>"
-                }
+                },
+                {
+                    "type": "text",
+                    "value": " Podemos acceder al siguiente enlace mediante la siguiente url:"
+                },
+                {
+                    "type": "link",
+                    "value": " https://wl39jcw2rl.execute-api.us-east-1.amazonaws.com/dev/date/range/20230303-20230404"
+                },
             ]
         },
         {
             "question": "4.-  Replica la respuesta anterior, pero en este nuevo end point regresa HTML, creando un dynamic web site.",
             "content": [
+                {
+                    "type": "text",
+                    "value": " Para actualizar la lambda y crear un sitio dinámico, procederemos a utilizar la mismas lambda."
+                },
+                {
+                    "type": "text",
+                    "value": "Para poder utilizar el método GET y aprovecharnos de la lambda , nos aprovecharemos de la function de lambda para obtener el contexto de la llamada y saber, que recurso es el que invoco la ejecución de la lambda, para eso utilizaremos el parámetro context."
+                },
+                {
+                    "type": "text",
+                    "value": " Ya que nuestra path de acceso ahora estará definido de la siguiente forma"
+                },
+                {
+                    "type": "text",
+                    "value": " baseUrl/dates/range/html/<fechas>"
+                },
+                {
+                    "type": "text",
+                    "value": "Podemos observar que, en comparación con nuestro URL anterior, para acceder a html la url debe tener el /html. Verificaremos esto en el handler de nuestra lambda y con  respect o a eso nosotros seremos capaces de observar si queremos el html o el JSON."
+                },
+                {
+                    "type": "text",
+                    "value": " Para eso haremos la siguiente actualización del código."
+                },
                 {
                     "type": "code",
                     "value": "/assets/images/assign10/calendar2.py"
@@ -264,6 +428,14 @@ exports.assign10 = {
                 {
                     "type": "text",
                     "value": "URL : https://wl39jcw2rl.execute-api.us-east-1.amazonaws.com/dev/date/range/html/<Fechas>"
+                },
+                {
+                    "type": "text",
+                    "value": " Podemos acceder al siguiente enlace mediante la siguiente url:"
+                },
+                {
+                    "type": "link",
+                    "value": " https://wl39jcw2rl.execute-api.us-east-1.amazonaws.com/dev/date/range/html/20230303-20230404"
                 }
             ]
         },
